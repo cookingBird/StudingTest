@@ -3,7 +3,7 @@ function test(a){
     function show(b){
         console.log('show'+ b)
     }
-    show()
+    // show()
     console.dir(show)
     console.dir(test)
 }
