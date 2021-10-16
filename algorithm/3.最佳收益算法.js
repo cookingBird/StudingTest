@@ -42,13 +42,11 @@ const maxProfit = function (records){
 		if(records[j]<records[++j]){
 			type = 'BUYED';
 			holdShare.push(records[i])
-			console.log('小于')
 		};
 		if(records[k]>records[++k]){
-				console.log('大于')
 				holdShare.push(records[i])
 				currentProfit += calcProfit(holdShare)
-				holdShare = [];
+				holdShare.splice(0);
 				type = 'SELLED';
 		};
 		if( i === records.length-1){
