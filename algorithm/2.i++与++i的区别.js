@@ -2,7 +2,9 @@
 let arr = [1,1,1,1, 2, 2, 2, 3, 4]
 let i = 3;
 console.log(i)
-console.log(arr[i] === arr[i++])
+console.log(arr[i] === arr[i+1])//false
+console.log(i)
+console.log(arr[i] === arr[i++])//true
 console.log(i)
 i--;
 console.log(i)
