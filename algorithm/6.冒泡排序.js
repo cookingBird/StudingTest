@@ -1,18 +1,17 @@
 function bubleSort(arr){
-	let arry = arr;
 	let temp = null;
-	console.log(arry)
-	for(let i = 0; i < arry.length; i++){
-		for(let j = 0; j < arry.length - i; j++){
+	console.log(arr)
+	for(let i = 0; i < arr.length; i++){
+		for(let j = 0; j < arr.length - i; j++){
 			// console.log(i, j)
-			if(arry[j] < arry[j+1]){
-				temp = arry[j];
-				arry[j] = arry[j+1];
-				arry[j+1] = temp 
+			if(arr[j] < arr[j+1]){
+				temp = arr[j];
+				arr[j] = arr[j+1];
+				arr[j+1] = temp 
 			}
 		}
 	}
-	return arry
+	return arr
 }
 let arr = [1, 3, 5, 10, 20, 50, 6, 9, 10]
 console.log(bubleSort(arr))
