@@ -36,13 +36,39 @@ function revertListByLoop(pHead) {
   if (!pHead || pHead.next == null) return pHead
   let currNode = pHead
   let reverseHead = null
+  //循环条件
   while (currNode) {
+    //循环体
     let temp = currNode.next
     currNode.next = reverseHead
     reverseHead = currNode
+    //条件自增
     currNode = temp
   }
   return reverseHead
+}
+function revertListByLoop2(pHead) {
+  if (!pHead || pHead.next === null) return pHead
+  let currNode = pHead
+  let revertHead = null
+  let temp = null
+  do {
+    //循环条件
+    temp = currNode.next
+    currNode.next = revertHead
+    revertHead = currNode
+    //条件自增
+  } while ((currNode = temp))
+  return revertHead
+}
+
+function revertListByRecursion(pHead) {
+  if (!pHead || pHead.next === null) return pHead
+  let pRevertHead = revertListByRecursion(pHead.next)
+  let postHead = pHead.next
+  postHead.next = pHead
+  pHead.next = null
+  return pRevertHead
 }
 
 function getList(arr) {
@@ -61,11 +87,12 @@ function getList(arr) {
 function printList(head) {
   if (!head || head.next == null) return console.log(head)
   let pHead = head
+  console.log(pHead)
   while ((pHead = pHead.next)) {
     console.log(pHead)
   }
 }
-let aList = getList([])
+let aList = getList([3, 5, 1])
 // console.log(aList)
-let head = revertListByLoop(aList)
+let head = revertListByLoop2(aList)
 printList(head)

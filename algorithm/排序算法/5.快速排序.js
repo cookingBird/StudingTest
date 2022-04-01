@@ -35,11 +35,33 @@ function swap(arr, i, j) {
 
 console.log(quickSort([11, 3, 2, 23, 13, 4, 2, 15, 26, 1, 23, 5, 34, 6]));
 
-function myPartition(arr, left, right) {
-  //以arr[pivot]分区，确定pivot的位置，同时返回pivot下标
-  let pivot = left;
-  let index = pivot + 1;
-  for (let i = index; i <= right; i++) {
+function myQuicKSort(arr, start, end) {
+  start = typeof start === 'number' ? start : 0;
+  end = typeof end === 'number' ? end : arr.length - 1;
+  if (start > end) return new Error('start > end');
+  let partitionIndex = myPartition2(arr, start, end);
+  myQuicKSort(arr, start, partitionIndex - 1);
+  myQuicKSort(arr, partitionIndex + 1, end);
+  return arr;
+}
+
+function myPartition(arr, start, end) {
+  let pivot = start;
+  let index = start + 1;
+  for (let i = index; i <= end; i++) {
+    if (arr[i] < arr[pivot]) {
+      swap(arr, i, index);
+      index++;
+    }
+  }
+  swap(arr, pivot, smallerIndex - 1);
+  return smallerIndex - 1;
+}
+
+function myPartition2(arr, start, end) {
+  let pivot = start;
+  let index = start + 1;
+  for (let i = index; i <= end; i++) {
     if (arr[i] < arr[pivot]) {
       swap(arr, i, index);
       index++;
@@ -49,15 +71,4 @@ function myPartition(arr, left, right) {
   return index - 1;
 }
 
-function myQuickSort(arr, start, end) {
-  let left = typeof start != 'number' ? 0 : start;
-  let right = typeof end != 'number' ? arr.length - 1 : end;
-  if (left < right) {
-    let partitionIndex = myPartition(arr, left, right);
-    myQuickSort(arr, left, partitionIndex - 1);
-    myQuickSort(arr, partitionIndex + 1, right);
-  }
-  return arr;
-}
-
-console.log(myQuickSort([1, 5, 2, 6, 3, 7, 8, 23, 4, 12, 15]));
+console.log(myQuicKSort([1, 5, 2, 6, 3, 7, 8, 23, 4, 12, 15]));

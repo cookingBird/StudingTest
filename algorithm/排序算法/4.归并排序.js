@@ -34,7 +34,7 @@ function myMergeSort(arr) {
   if (arr.length < 2) return arr;
   let middle = Math.floor(arr.length / 2);
   let left = arr.slice(0, middle);
-  let right = arr.slice(middle, arr.length);
+  let right = arr.slice(middle);
   return myMerge(myMergeSort(left), myMergeSort(right));
 }
 
@@ -51,4 +51,5 @@ function myMerge(left, right) {
   while (right.length) result.push(right.shift());
   return result;
 }
+
 console.log(myMergeSort([3, 1, 2, 3, 4, 12, 2, 31, 4, 1]));
