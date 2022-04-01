@@ -47,6 +47,7 @@ function revertListByLoop(pHead) {
   }
   return reverseHead
 }
+
 function revertListByLoop2(pHead) {
   if (!pHead || pHead.next === null) return pHead
   let currNode = pHead
@@ -92,6 +93,7 @@ function printList(head) {
     console.log(pHead)
   }
 }
+
 let aList = getList([3, 5, 1])
 // console.log(aList)
 let head = revertListByLoop2(aList)
