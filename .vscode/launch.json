@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MaxSamePrefix",
+            "request": "launch",
+            "mainClass": "MaxSamePrefix",
+            "projectName": "test_e6fc3aa2"
+        },
+        {
+            "type": "java",
+            "name": "Launch RomaNumToInt",
+            "request": "launch",
+            "mainClass": "RomaNumToInt",
+            "projectName": "test_e6fc3aa2"
+        },
+        {
+            "type": "java",
+            "name": "Launch isPalindrome",
+            "request": "launch",
+            "mainClass": "isPalindrome",
+            "projectName": "test_e6fc3aa2"
+        },
+        {
+            "type": "java",
             "name": "Launch NumSum",
             "request": "launch",
             "mainClass": "NumSum",
