@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch NumSum",
+            "request": "launch",
+            "mainClass": "NumSum",
+            "projectName": "test_e6fc3aa2"
+        },
+        {
+            "type": "java",
+            "name": "Launch TwoNumSum",
+            "request": "launch",
+            "mainClass": "TwoNumSum",
+            "projectName": "test_e6fc3aa2"
+        },
+        {
             "type": "pwa-node",
             "request": "launch",
             "name": "Launch Program",
